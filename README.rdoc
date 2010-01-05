@@ -1,16 +1,24 @@
-= fetlife-munin-plugins
+= Munin Plugin
 
-Description goes here.
+A friendly API for creating munin plugins in ruby.
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+Here's the example from the munin site, implmeneted with munin_plugin:
+
+    #!/usr/bin/env ruby -rubygems
+
+    require 'munin_plugin'
+
+    munin_plugin do
+      graph_title  "Load average"
+      graph_vlabel "load"
+      load.label   "load"
+
+      collect do
+        load.value `cat /proc/loadavg`.split(" ")[1]
+      end
+    end
+
+That's it.
 
 == Copyright
 
