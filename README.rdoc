@@ -4,25 +4,25 @@ A friendly API for creating munin plugins in ruby.
 
 Here's the example from the munin site, implmeneted with munin_plugin:
 
-    #!/usr/bin/env ruby -rubygems
+  #!/usr/bin/env ruby -rubygems
 
-    require 'munin_plugin'
+  require 'munin_plugin'
 
-    munin_plugin do
-      graph_title  "Load average"
-      graph_vlabel "load"
-      load.label   "load"
+  munin_plugin do
+    graph_title  "Load average"
+    graph_vlabel "load"
+    load.label   "load"
 
-      collect do
-        load.value `cat /proc/loadavg`.split(" ")[1]
-      end
+    collect do
+      load.value `cat /proc/loadavg`.split(" ")[1]
     end
+  end
 
 That's it.
 
 = Install
 
-    sudo gem install munin_plugin
+  sudo gem install munin_plugin
 
 == Copyright
 
