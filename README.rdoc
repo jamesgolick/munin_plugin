@@ -20,6 +20,10 @@ Here's the example from the munin site, implmeneted with munin_plugin:
 
 That's it.
 
+= Install
+
+    sudo gem install munin_plugin
+
 == Copyright
 
 Copyright (c) 2010 James Golick. See LICENSE for details.
