@@ -1,5 +1,6 @@
-#!/usr/bin/env ruby -rubygems
+#!/usr/bin/env ruby
 
+require 'rubygems' # or rip or whatever
 require 'munin_plugin'
 
 munin_plugin do

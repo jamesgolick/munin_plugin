@@ -4,8 +4,9 @@ A friendly API for creating munin plugins in ruby.
 
 Here's the example from the munin site, implmeneted with munin_plugin:
 
-  #!/usr/bin/env ruby -rubygems
+  #!/usr/bin/env ruby
 
+  require 'rubygems' # or something else
   require 'munin_plugin'
 
   munin_plugin do
@@ -19,6 +20,18 @@ Here's the example from the munin site, implmeneted with munin_plugin:
   end
 
 That's it.
+
+Save your file as loadavg and run it with ./loadavg.
+
+Example output:
+
+  [james@ubuntu munin_plugin (master)]$ examples/loadavg config
+  graph_title Load average
+  graph_vlabel load
+  load.label load
+
+  [james@ubuntu munin_plugin (master)]$ examples/loadavg 
+  load.value 0.03
 
 = Install
 
