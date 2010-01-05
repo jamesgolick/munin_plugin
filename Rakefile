@@ -4,14 +4,12 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "fetlife-munin-plugins"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
-    gem.email = "james@giraffesoft.ca"
-    gem.homepage = "http://github.com/giraffesoft/fetlife-munin-plugins"
+    gem.name = "munin_plugin"
+    gem.summary = %Q{Friendly API for creating munin plugins in ruby.}
+    gem.description = %Q{Friendly API for creating munin plugins in ruby.}
+    gem.email = "jamesgolick@gmail.com"
+    gem.homepage = "http://github.com/jamesgolick/munin_plugin"
     gem.authors = ["James Golick"]
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
