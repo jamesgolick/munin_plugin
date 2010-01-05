@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require 'munin_plugin'
+
+munin_plugin do
+  graph_title  "Load average"
+  graph_vlabel "load"
+  load.label   "load"
+
+  collect do
+    load.value `cat /proc/loadavg`.split(" ")[1]
+  end
+end
+
