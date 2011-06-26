@@ -1,5 +1,7 @@
 class MuninPlugin
   class Attribute
+    undef_method :load, :type
+
     attr_reader :name, :args
 
     def initialize(*args)
@@ -24,7 +26,7 @@ class MuninPlugin
   end
 
   class Collector
-    undef_method :load
+    undef_method :load, :type
 
     def initialize(&block)
       instance_eval(&block)
