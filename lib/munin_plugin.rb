@@ -1,6 +1,7 @@
 class MuninPlugin
   class Attribute
-    undef_method :load, :type
+    undef_method :load if method_defined? :load
+    undef_method :type if method_defined? :type
 
     attr_reader :name, :args
 
@@ -26,7 +27,8 @@ class MuninPlugin
   end
 
   class Collector
-    undef_method :load, :type
+    undef_method :load if method_defined? :load
+    undef_method :type if method_defined? :type
 
     def initialize(&block)
       instance_eval(&block)
@@ -55,7 +57,7 @@ class MuninPlugin
   end
 
   attr_reader :config
-  
+
   def initialize(&block)
     @config = Collector.new(&block)
   end
